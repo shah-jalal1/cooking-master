@@ -1,7 +1,6 @@
-const mealName = document.getElementById('inputSearch').value;
-
 
 function searchMeal() {
+    const mealName = document.getElementById('inputSearch').value;
     console.log(mealName);
     url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
@@ -21,7 +20,6 @@ const displaycCountries = countries => {
         const countryInfo = `
             <h3 class="country-name">${country.strMeal}</h3>
             <img style="width: 200px; height: 200px;"; class="img-fluid" src="${country.strMealThumb}">
-            <button onClick="displayCountryDetails('${country.name}')">Details</button>
         `;
 
         countryDiv.innerHTML = countryInfo;
@@ -31,24 +29,24 @@ const displaycCountries = countries => {
 
 }
 
-const displayCountryDetails = names => {
-    const url = `https://restcountries.eu/rest/v2/name/${names}`;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => renderCountryinfo(data[0]));
-}
+// const displayCountryDetails = names => {
+//     const url = `https://restcountries.eu/rest/v2/name/${names}`;
+//     fetch(url)
+//         .then(res => res.json())
+//         .then(data => renderCountryinfo(data[0]));
+// }
 
-const renderCountryinfo = country => {
-    console.log(country);
-    const countryDiv = document.getElementById('countryDetail');
-    countryDiv.innerHTML = `
-        <h1>${country.name}</h1>
-        <p>Population: ${country.population}</p>
-        <p>Area: ${country.area}</p>
-        <img src="${country.flag}">
-    `;
+// const renderCountryinfo = country => {
+//     console.log(country);
+//     const countryDiv = document.getElementById('countryDetail');
+//     countryDiv.innerHTML = `
+//         <h1>${country.name}</h1>
+//         <p>Population: ${country.population}</p>
+//         <p>Area: ${country.area}</p>
+//         <img src="${country.flag}">
+//     `;
 
-}
+// }
 
 
 
