@@ -12,13 +12,13 @@
 
 
 
-#countries{
+#meal{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     
 }
-.country{
+.meal{
     border: 1px solid orange;
     border-radius: 20px;
     padding: 20px;
@@ -27,11 +27,19 @@
     background-color: rgb(143, 140, 139);
 }
 
-.country-name{
+.meal-name{
     font-size: 45px;
     color: rgb(141, 62, 33)
 }
 
-#countryDetail{
+#mealDetail{
     width: 200px;
+}
+
+.mealDetailDiv{
+    /* padding-top: 50px;
+    width: 50%;
+    margin: 0 auto; */
+    margin-bottom: 10px;
+    margin-left: 50px;
 }

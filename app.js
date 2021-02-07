@@ -1,65 +1,62 @@
-
-
-
 function searchMeal() {
-    document.getElementById("countries").innerHTML = "";
+    document.getElementById("meal").innerHTML = "";
     const mealName = document.getElementById('inputSearch').value;
     console.log(mealName);
     url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
         .then(res => res.json())
-        .then(data => displaycCountries(data.meals));
+        .then(data => displaymeal(data.meals));
 
 }
 
-const displaycCountries = countries => {
+const displaymeal = meal => {
 
 
-    // console.log(countries);
-    const contriesDiv = document.getElementById('countries');
+    // console.log(meal);
+    const contriesDiv = document.getElementById('meal');
 
-    countries.forEach(country => {
-        const countryDiv = document.createElement('div');
-        countryDiv.className = 'country';
+    meal.forEach(meal => {
+        const mealDiv = document.createElement('div');
+        mealDiv.className = 'meal';
 
-        const countryInfo = `
-            <img onClick="displayCountryDetails('${country.strMeal}')" style="width: 100%; height: 200px;"; class="img-fluid" src="${country.strMealThumb}">
-            <h3 onClick="displayCountryDetails('${country.strMeal}')" class="country-name">${country.strMeal}</h3>
-            <button onClick="displayCountryDetails('${country.strMeal}')">Details</button>
+        const mealInfo = `
+            <img onClick="displaymealDetails('${meal.strMeal}')" style="width: 100%; height: 200px;"; class="img-fluid" src="${meal.strMealThumb}">
+            <h3 onClick="displaymealDetails('${meal.strMeal}')" class="meal-name">${meal.strMeal}</h3>
         `;
 
-        countryDiv.innerHTML = countryInfo;
-        contriesDiv.appendChild(countryDiv);
+        mealDiv.innerHTML = mealInfo;
+        contriesDiv.appendChild(mealDiv);
 
     });
 
 }
 
-const displayCountryDetails = names=> {
+const displaymealDetails = names=> {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${names}`;
     fetch(url)
     .then(res => res.json())
-    .then(data => renderCountryinfo(data.meals[0]));
+    .then(data => rendermealinfo(data.meals[0]));
 }
 
-const renderCountryinfo = country => {
-    console.log(country);
-    const countryDiv = document.getElementById('countryDetail');
-    countryDiv.innerHTML = "";
-    countryDiv.innerHTML = `
-    <img style="width: 200px; height: 200px;"; class="img-fluid" src="${country.strMealThumb}">
-        <h1>${country.strMeal}</h1>
+const rendermealinfo = meal => {
+    console.log(meal);
+    const mealDiv = document.getElementById('mealDetail');
+    mealDiv.innerHTML = "";
+    mealDiv.className = 'mealDetailDiv';
+    mealDiv.innerHTML = `
+    <img style="width: 200px; height: 200px;"; class="img-fluid" src="${meal.strMealThumb}">
+        <h1>${meal.strMeal}</h1>
         <ul>
-            <li>${country.strMeasure1} ${country.strIngredient1}</li>
-            <li>${country.strMeasure2} ${country.strIngredient2}</li>
-            <li>${country.strMeasure3} ${country.strIngredient3}</li>
-            <li>${country.strMeasure4} ${country.strIngredient4}</li>
-            <li>${country.strMeasure5} ${country.strIngredient5}</li>
-            <li>${country.strMeasure6} ${country.strIngredient6}</li>
-            <li>${country.strMeasure7} ${country.strIngredient7}</li>
-            <li>${country.strMeasure9} ${country.strIngredient8}</li>
-            <li>${country.strMeasure9} ${country.strIngredient9}</li>
-            <li>${country.strMeasure10} ${country.strIngredient10}</li>
+            <li>${meal.strMeasure1} ${meal.strIngredient1}</li>
+            <li>${meal.strMeasure2} ${meal.strIngredient2}</li>
+            <li>${meal.strMeasure3} ${meal.strIngredient3}</li>
+            <li>${meal.strMeasure4} ${meal.strIngredient4}</li>
+            <li>${meal.strMeasure5} ${meal.strIngredient5}</li>
+            <li>${meal.strMeasure6} ${meal.strIngredient6}</li>
+            <li>${meal.strMeasure7} ${meal.strIngredient7}</li>
+            <li>${meal.strMeasure9} ${meal.strIngredient8}</li>
+            <li>${meal.strMeasure9} ${meal.strIngredient9}</li>
+            <li>${meal.strMeasure10} ${meal.strIngredient10}</li>
         </ul>
     `;
 }
