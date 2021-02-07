@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(197, 199, 112);
+}
+
 #search{
     padding-top: 50px;
     width: 50%;
@@ -17,18 +21,16 @@
    
 }
 
-
-
 #meal{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     
 }
-.meal{
+.mealDiv{
     border: 1px solid orange;
     border-radius: 20px;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     width: 300px;
     background-color: rgb(143, 140, 139);
@@ -49,4 +51,8 @@
     margin: 0 auto; */
     margin-bottom: 10px;
     margin-left: 50px;
+}
+
+.ingredUl{
+    font-size: 20px;
 }

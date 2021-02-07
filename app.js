@@ -19,7 +19,7 @@ const displaymeal = meal => {
 
     meal.forEach(meal => {
         const mealDiv = document.createElement('div');
-        mealDiv.className = 'meal';
+        mealDiv.className = 'mealDiv';
 
         const mealInfo = `
             <img onClick="displaymealDetails('${meal.strMeal}')" style="width: 100%; height: 200px;"; class="img-fluid" src="${meal.strMealThumb}">
@@ -46,9 +46,10 @@ const rendermealinfo = meal => {
     mealDiv.innerHTML = "";
     mealDiv.className = 'mealDetailDiv';
     mealDiv.innerHTML = `
-    <img style="width: 200px; height: 200px;"; class="img-fluid" src="${meal.strMealThumb}">
-        <h1>${meal.strMeal}</h1>
-        <ul>
+    <img style="width: 330px; height: 200px;"; class="img-fluid" src="${meal.strMealThumb}">
+    <h1>${meal.strMeal}</h1>
+    <h2>Ingredients</h2>
+        <ul class="ingredUl">
             <li>${meal.strMeasure1} ${meal.strIngredient1}</li>
             <li>${meal.strMeasure2} ${meal.strIngredient2}</li>
             <li>${meal.strMeasure3} ${meal.strIngredient3}</li>
@@ -56,9 +57,11 @@ const rendermealinfo = meal => {
             <li>${meal.strMeasure5} ${meal.strIngredient5}</li>
             <li>${meal.strMeasure6} ${meal.strIngredient6}</li>
             <li>${meal.strMeasure7} ${meal.strIngredient7}</li>
-            <li>${meal.strMeasure9} ${meal.strIngredient8}</li>
+            <li>${meal.strMeasure8} ${meal.strIngredient8}</li>
             <li>${meal.strMeasure9} ${meal.strIngredient9}</li>
             <li>${meal.strMeasure10} ${meal.strIngredient10}</li>
+            <li>${meal.strMeasure11} ${meal.strIngredient11}</li>
+            <li>${meal.strMeasure12} ${meal.strIngredient12}</li>
         </ul>
     `;
 }
