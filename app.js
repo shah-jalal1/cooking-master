@@ -1,15 +1,20 @@
 
+
+
 function searchMeal() {
+    document.getElementById("countries").innerHTML = "";
     const mealName = document.getElementById('inputSearch').value;
     console.log(mealName);
     url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
         .then(res => res.json())
         .then(data => displaycCountries(data.meals));
+
 }
 
 const displaycCountries = countries => {
-    
+
+
     // console.log(countries);
     const contriesDiv = document.getElementById('countries');
 
@@ -18,8 +23,8 @@ const displaycCountries = countries => {
         countryDiv.className = 'country';
 
         const countryInfo = `
-            <h3 class="country-name">${country.strMeal}</h3>
             <img style="width: 200px; height: 200px;"; class="img-fluid" src="${country.strMealThumb}">
+            <h3 class="country-name">${country.strMeal}</h3>
         `;
 
         countryDiv.innerHTML = countryInfo;
