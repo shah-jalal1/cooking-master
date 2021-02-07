@@ -5,8 +5,15 @@
     margin-bottom: 50px;
 }
 
+#inputSearch{
+    padding: 5px;
+    border-radius: 5px;
+}
+
 #searchButton{
-    padding: 10px 30px;
+    padding: 15px 30px;
+    background-color: rgb(34, 56, 177);
+    color: white;
    
 }
 
