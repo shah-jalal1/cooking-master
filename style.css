@@ -16,6 +16,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    
 }
 .country{
     border: 1px solid orange;
@@ -23,11 +24,12 @@
     padding: 20px;
     text-align: center;
     width: 300px;
+    background-color: rgb(143, 140, 139);
 }
 
 .country-name{
     font-size: 45px;
-    color: rgb(122, 82, 122);
+    color: rgb(141, 62, 33)
 }
 
 #countryDetail{
