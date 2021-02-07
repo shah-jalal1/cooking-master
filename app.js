@@ -41,7 +41,7 @@ const displaymealDetails = names=> {
 }
 
 const rendermealinfo = meal => {
-    console.log(meal);
+    // console.log(meal);
     const mealDiv = document.getElementById('mealDetail');
     mealDiv.innerHTML = "";
     mealDiv.className = 'mealDetailDiv';
