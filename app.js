@@ -1,17 +1,19 @@
 function searchMeal() {
     document.getElementById("meal").innerHTML = "";
     const mealName = document.getElementById('inputSearch').value;
-    console.log(mealName);
+    // console.log(mealName);
     url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
         .then(res => res.json())
-        .then(data => displaymeal(data.meals));
+        .then(data => displaymeal(data.meals))
+        .catch(error =>alert("Meal Item Not Found"));;
 
 }
 
 const displaymeal = meal => {
 
-
+    const mealName = document.getElementById('inputSearch').value;
+    
     // console.log(meal);
     const contriesDiv = document.getElementById('meal');
 
