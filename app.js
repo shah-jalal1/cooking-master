@@ -23,8 +23,8 @@ const displaycCountries = countries => {
         countryDiv.className = 'country';
 
         const countryInfo = `
-            <img style="width: 100%; height: 200px;"; class="img-fluid" src="${country.strMealThumb}">
-            <h3 class="country-name">${country.strMeal}</h3>
+            <img onClick="displayCountryDetails('${country.strMeal}')" style="width: 100%; height: 200px;"; class="img-fluid" src="${country.strMealThumb}">
+            <h3 onClick="displayCountryDetails('${country.strMeal}')" class="country-name">${country.strMeal}</h3>
             <button onClick="displayCountryDetails('${country.strMeal}')">Details</button>
         `;
 
