@@ -1,5 +1,6 @@
 function searchMeal() {
     document.getElementById("meal").innerHTML = "";
+    document.getElementById('mealDetail').innerHTML = "";
     const mealName = document.getElementById('inputSearch').value;
     // console.log(mealName);
     url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
